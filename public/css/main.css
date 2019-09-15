@@ -1,0 +1,89 @@
+html, body {
+    background-color: skyblue;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 200px;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h2{
+    font-size: 40px;
+}
+
+.animal__icon{
+    display: flex;
+}
+
+.animal__icon-item{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.full-height1 {
+    height: 200px;
+}
+
+.flex-center1 {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li{
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.content1 {
+    text-align: center;
+}
+
+.title1 {
+    font-size: 64px;
+}
+
+.links1 > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md1 {
+    margin-bottom: 30px;
+}
+
+.mammals__box{
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mammals-img{
+    width: 100%;
+    height: 360px;
+}
+
+.mammal-classes{
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
