@@ -87,7 +87,11 @@
                 margin-bottom: 30px;
             }
         </style>
+            <div class="container">
     <body>
+        <div class="flex-center1">
+            <h2>Новини</h2>
+        </div>    
         <div class="flex-center position-ref full-height">
 
             <div class="content">
@@ -135,5 +139,5 @@
 
             </div>
         </div>
-
+        </div>
 @endsection

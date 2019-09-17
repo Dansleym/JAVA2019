@@ -20,12 +20,12 @@
                 </div>
 
                 <div class="links1">               
-                    <a href="/zinfo">Зоопарк</a>
+                    <a href="/zinfo">Зоопарки</a>
                     <a href="/animals">Тварини</a>
                     <a href="/news">Новини</a>
                     <a href="/tickets">Квитки</a>
                     <a href="/contacts">Контакти</a>
-                    <a href="/galery">Галерея</a>                   
+                    <a href="/galery">Галерея</a>                                    
                 </div>
             </div>
         </div>

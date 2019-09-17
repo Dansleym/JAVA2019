@@ -66,7 +66,10 @@
                 margin-bottom: 30px;
             }
         </style>
-
+    <div class="container">
+    <div class="flex-center1">
+            <h2>Зоопарки</h2>
+        </div>
         <div class="flex-center position-ref full-height">
             <div class="content">
                     <div>
@@ -98,5 +101,6 @@
                         </div>
                     </div>
             </div>
+        </div>
         </div>
 @endsection

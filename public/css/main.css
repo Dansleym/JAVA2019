@@ -7,6 +7,10 @@ html, body {
     margin: 0;
 }
 
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
 a{
     text-decoration: none;
     color: black;
@@ -44,7 +48,9 @@ h2{
 
 li{
     list-style-type: none;
+    width: 33%;
     margin-right: 20px;
+
 }
 
 .content1 {
@@ -81,9 +87,26 @@ li{
 }
 
 .mammal-classes{
+    top: 0px;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.card{
+    position: relative;
+}
+
+.mammal-classes > p{
+    margin: 0;
+    padding: 0;
+    position: absolute;
     font-size: 22px;
-    color: black;
+    color: white;
     font-weight: 600;
     text-transform: uppercase;
+    z-index: 2;
 }
+
 

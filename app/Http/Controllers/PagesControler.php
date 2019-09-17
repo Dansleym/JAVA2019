@@ -63,7 +63,12 @@ class Mammals{
 
     public static function getMammals(){
         return[
-            new Mammals('mammal_cat','rice'),
+            new Mammals('mammal_cat','lynx'),
+            new Mammals('mammal_lion','lion'),
+            new Mammals('mammal_tiger','tiger'),
+            new Mammals('mammal_cat','lynx'),
+            new Mammals('mammal_lion','lion'),
+            new Mammals('mammal_tiger','tiger'),
             new Mammals('mammal_lion','lion'),
             new Mammals('mammal_tiger','tiger'),
         ];
