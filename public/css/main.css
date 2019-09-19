@@ -48,7 +48,7 @@ h2{
 
 li{
     list-style-type: none;
-    width: 33%;
+    width: 100%;
     margin-right: 20px;
 
 }
@@ -77,8 +77,9 @@ li{
 
 .mammals__box{
     width: 1200px;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
 }
 
 .mammals-img{
