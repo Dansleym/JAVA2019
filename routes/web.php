@@ -14,4 +14,4 @@ Route::get('/galery', "PagesControler@galery");
 
 Route::get('/tickets', "PagesControler@tickets");
 
-Route::get('/mammals/mammals', "PagesControler@mammals");
+Route::get('/mammals/mammals', "MammalsController@index");

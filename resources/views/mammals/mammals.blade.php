@@ -18,12 +18,15 @@
                 @foreach($mammals as $mammal)  
 
                     <li class="card">
-                        <img class="mammals-img" src="/img/{{ $mammal->getM_img() }}.jpg" alt="">
+                        <img class="mammals-img" src="/img/mammal_cat.jpg" alt="">
                         <div class="mammal-classes flex-center1">
                             <p>
-                                {{ $mammal->getM_class() }}
+                                {{ $mammal->genus }}<br>
+                                {{ $mammal->information }}
                             </p>
+                           
                         </div>
+                   
                     </li> 
      
                 @endforeach

@@ -33,44 +33,5 @@ class PagesControler extends Controller
     public function news(){
         return view('news');
     }
-
-    public function mammals(){
-        return view('mammals/mammals', [
-            'mammals' => Mammals::getMammals(), 
-        ]);
-    }
-
 }
 
-class Mammals{
-    private $m_img;
-    private $m_class;
-
-    public function __construct(String $m_img, String $m_class){
-        $this->m_img = $m_img;
-        $this->m_class = $m_class;
-    }
-
-    public function getM_img(): String
-    {
-        return $this->m_img;
-    }
-
-    public function getM_class(): String
-    {
-        return $this->m_class;
-    }
-
-    public static function getMammals(){
-        return[
-            new Mammals('mammal_cat','lynx'),
-            new Mammals('mammal_lion','lion'),
-            new Mammals('mammal_tiger','tiger'),
-            new Mammals('mammal_cat','lynx'),
-            new Mammals('mammal_lion','lion'),
-            new Mammals('mammal_tiger','tiger'),
-            new Mammals('mammal_lion','lion'),
-            new Mammals('mammal_tiger','tiger'),
-        ];
-    }
-}
