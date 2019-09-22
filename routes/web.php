@@ -14,4 +14,14 @@ Route::get('/galery', "PagesControler@galery");
 
 Route::get('/tickets', "PagesControler@tickets");
 
+Route::get('/addform', "PagesControler@addform");
+
 Route::get('/mammals/mammals', "MammalsController@index");
+
+Route::post('/addimage', "MammalsController@store")->name('addimage');
+
+Route::get('/editform/{id}', "MammalsController@edit");
+
+Route::patch('/updateDB/{id}', "MammalsController@update");
+
+Route::get("/deleteDB/{id}", "MammalsController@delete");

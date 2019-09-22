@@ -33,5 +33,9 @@ class PagesControler extends Controller
     public function news(){
         return view('news');
     }
+
+    public function addform(){
+        return view('mammals/addform');
+    }
 }
 

@@ -2,10 +2,6 @@
 
 @section('title', 'Інформація')
 
-@section('header')
-    @parent
-@endsection
-
 @section('content')
         <!-- Styles -->
         <style>

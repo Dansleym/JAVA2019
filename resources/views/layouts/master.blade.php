@@ -12,7 +12,9 @@
         <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
+@show 
 
+@section('nav')
         <div class="flex-center1 position-ref full-height1">
             <div class="content1">
                 <div class="title1 m-b-md1">
@@ -29,7 +31,8 @@
                 </div>
             </div>
         </div>
-@show 
+@show
+ 
 
 @yield("content")
 

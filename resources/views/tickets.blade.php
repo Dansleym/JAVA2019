@@ -2,10 +2,6 @@
 
 @section('title', 'Квитки')
 
-@section('header')
-    @parent
-@endsection
-
 @section('content')
     <div class="container">
 

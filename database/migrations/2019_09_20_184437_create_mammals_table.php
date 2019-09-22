@@ -16,6 +16,7 @@ class CreateMammalsTable extends Migration
         Schema::create('mammals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->mediumText('image')->nullable();
             $table->string('genus', 20);
             $table->text('information');           
         });

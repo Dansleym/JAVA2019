@@ -2,10 +2,6 @@
 
 @section('title', 'Тварини')
 
-@section('header')
-    @parent
-@endsection
-
 @section('content')
 <div class="container">
         <div class="flex-center1">

@@ -2,10 +2,6 @@
 
 @section('title', 'Новини')
 
-@section('header')
-    @parent
-@endsection
-
 @section('content')
         <style>
 
