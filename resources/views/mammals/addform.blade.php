@@ -14,15 +14,15 @@
             <h3>Додавання ссавців</h3> 
             <div class="form-row">
                 <label class="form-label" for="">Choose image: </label>
-                <input type="file" name="image">
+                <input required type="file" name="image">
             </div>
             <div class="form-row">
                 <label class="form-label" for="">Genus:</label>
-                <input class="form-input" type="text" name="genus">
+                <input required maxlength="20" class="form-input" type="text" name="genus">
             </div> 
             <div class="form-row">
                 <label class="form-label" for="">Information:</label>
-                <input class="form-input" type="text" name="information">
+                <input required class="form-input" type="text" name="information">
             </div>
             <div class="form-row">
                 <button class="form-button" type="submit" name="submit">Save Data</button>   

@@ -1,0 +1,19 @@
+создать проект:
+composer create-project --prefer-dist laravel/laravel lProj 5.8
+
+
+.env(удалить расширение)
+composer install
+composer update
+php artisan key:generate
+
+php artisan config:clear
+php artisan cache:clear
+
+
+
+php artisan migrate:migration create_mammals_table
+
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:refresh

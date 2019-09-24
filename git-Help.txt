@@ -1,0 +1,11 @@
+git config --global user.name "Dansleym"
+git config --global Dansleymeplz@gmail.com
+
+git remote add origin https://github.com/tutorialzine/awesome-project.git
+
+git branch
+git checkout newbranch
+
+git merge newbranch
+
+git branch -d newbranch

@@ -22,12 +22,27 @@
             </div>
             <div class="form-row">
                 <label class="form-label" for="">Genus:</label>
-                <input class="form-input" type="text" name="genus" value="{{ $mammals->genus }}">
+                <input maxlength="30" class="form-input" id="{{ $errors->has('genus') ? 'is-invalid':'' }}" type="text" id="genus" name="genus" value="{{ $mammals->genus }}">
+
             </div> 
+                <small>
+                    <ul>
+                        @foreach($errors->get('genus') as $error)
+                            <li class="error">{{ $error }}</li>
+                        @endforeach
+                    </ul>                 
+                </small>
             <div class="form-row">
                 <label class="form-label" for="">Information:</label>
-                <input class="form-input" type="text" name="information" value="{{ $mammals->information }}">
+                <input class="form-input" id="{{ $errors->has('information') ? 'is-invalid':'' }}" type="text" name="information" value="{{ $mammals->information }}">
             </div>
+                <small>
+                    <ul>
+                        @foreach($errors->get('information') as $error)
+                            <li class="error">{{ $error }}</li>
+                        @endforeach
+                    </ul>                 
+                </small>
             <div class="form-row">
                 <button class="form-button" type="submit" name="submit">Edit Data</button>   
                 <a href="/mammals/mammals"><button class="form-button form-button-back" type="button" name="button">Back</button></a>

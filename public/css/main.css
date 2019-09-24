@@ -20,6 +20,30 @@ h2{
     font-size: 40px;
 }
 
+.error{
+    color: red;
+    margin-left: 125px;
+    margin-top: -10px;
+    list-style: disc;
+}
+
+#is-invalid{
+    border-color: red;
+}
+
+.enter{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+.enter > a:hover{
+    color: grey;
+}
+
 .animal__icon{
     display: flex;
 }
@@ -69,6 +93,10 @@ li{
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.links1 > a:hover{
+    color: black;
 }
 
 .m-b-md1 {
@@ -135,6 +163,10 @@ li{
     padding: 3px; 
 }
 
+.db_links:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 .db_links_red{
     font-size: 18px;
     color: red;
@@ -142,6 +174,10 @@ li{
     background-color: transparent;
     padding: 3px;
     margin-left: 20px; 
+}
+
+.db_links_red:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 /*addform style*/
@@ -165,6 +201,8 @@ li{
     height: 30px;
     border: 1px solid springgreen;
     border-radius: 5px;
+    padding-left: 5px;
+    margin-top: 4px;
 }
 
 .form-input:hover{
@@ -201,4 +239,34 @@ li{
 
 .form-button-back a{
     color: white;
+}
+
+.reg-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-button-reg{
+    border: 1px solid springgreen;
+    width: 200px;
+    height: 40px;
+    margin-top: 5px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: rgb(0, 128, 49);
+    cursor: pointer;
+}
+
+.form-button-reg:hover{
+    color: grey;
+}
+
+.form-button-reg:last-child{
+    margin-bottom: 10px;
+    background-color: rgb(255, 38, 0);
+}
+.form-button-reg-blue{
+    background-color: blue;
 }
