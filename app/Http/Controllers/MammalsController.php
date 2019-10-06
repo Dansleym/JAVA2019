@@ -16,21 +16,10 @@ class MammalsController extends Controller
     }
 
     public function store(Request $request){
-        request()->validate([
-            'image' => 'required',
-            'genus' => ['required', 'max:20'],
-            'information' => 'required|min:10|max:100',
-        ], [
-            'image.required' => 'Додайте зображення тварини',
-            'genus.required' => 'Поле Genus має бути заповненим',
-            'genus.max' => 'Вид тварини має містити максимум 20 символів',
-            'information.required' => 'Поле Information має буди заповненим',
-            'information.min' => 'Інформація про тварину має мистити мінімум 10 та максимум 100 символів',
-            'information.max' => 'Інформація про тварину має мистити мінімум 10 та максимум 100 символів',
-        ]);
 
         $mammals = new Mammal();
-        
+
+        $mammals->animals_id = "1";
         $mammals->genus = $request->input('genus');
         $mammals->information = $request->input('information');
 
@@ -79,7 +68,7 @@ class MammalsController extends Controller
             \request()->validate([
                 //'image' => 'required',
                 'genus' => ['required', 'max:20'],
-                'information' => 'required|min:10|max:100',
+                'information' => 'required|min:1|max:100',
             ], [
                 //'image.required' => 'Додайте зображення тварини',
                 'genus.required' => 'Поле "Вид" має бути заповненим',
@@ -101,4 +90,14 @@ class MammalsController extends Controller
 
         return redirect('mammals/mammals')->with('mammals', $mammals);
     }
+
+    public function show($id){
+        $mammals = Mammal::find($id);
+                if(is_null($mammals)){
+            return "тварини не існує";
+        }
+
+        return view('mammals/showform')->with('mammals', $mammals);
+    }
+
 }

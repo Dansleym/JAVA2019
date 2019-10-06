@@ -25,5 +25,14 @@ Route::get('/editform/{id}', "MammalsController@edit");
 
 Route::patch('/updateDB/{id}', "MammalsController@update");
 
+Route::get('/showform/{id}', "MammalsController@show");
+
+Route::get('/mammals/showform', "AnimalsController@index");
+
 
 Route::get("/deleteDB/{id}", "MammalsController@delete");
+
+Route::get('/addAnimals', "PagesControler@addAnimals");
+
+Route::post('/addClassAnimals', "AnimalsController@store")->name('addClassAnimals');
+

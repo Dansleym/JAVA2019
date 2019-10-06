@@ -23,7 +23,9 @@
                             <a class="db_links_red" href="/deleteDB/{{ $mammal->id }}">Видалити</a>
                         </div>  
 
-                        <img class="mammals-img" src="/img/mammals/{{ $mammal->image }}" alt="">
+                        <a href="/showform/{{ $mammal->id }}">
+                            <img class="mammals-img" src="/img/mammals/{{ $mammal->image }}" alt="">
+                        </a>          
 
                         <div class="mammal-classes flex-center1">
                             <p>
