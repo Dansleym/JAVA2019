@@ -1,36 +1,35 @@
 @extends('layouts/master')
 
-@section('title', 'Ссавці')
+@section('title', 'Риби')
 
 @section('content')
 <div class="container">
 
         <div class="flex-center1">
-            <h2>Ссавці</h2>
+            <h2>Риби</h2>
         </div>
-
         <div class="flex-center1 ">
         
             <ul class="mammals__box ">
 
-                @foreach($mammals as $mammal)  
+                @foreach($fishes as $fish)  
                   
                     <li class="card">
 
                         <div class="cube-edit">
-                            <a class="db_links" href="/editform/{{ $mammal->id }}">Редагувати</a>
+                            <a class="db_links" href="/editformfish/{{ $fish->id }}">Редагувати</a>
                             <button class="btn db_links_red" type="button" data-toggle="modal" data-target="#deleteModal">Видалити</button>
                         </div>  
 
-                        <a href="/showform/{{ $mammal->id }}">
-                            <img class="mammals-img" src="/img/mammals/{{ $mammal->image }}" alt="">
+                        <a href="/showform/{{ $fish->id }}">
+                            <img class="mammals-img" src="/img/fishes/{{ $fish->image }}" alt="">
                         </a>          
 
                         <div class="mammal-classes flex-center1">
                             <p>
-                                {{ $mammal->genus }}
+                                {{ $fish->genus }}
                             </p>    
-                            <span class="information">{{ $mammal->information }}</span>                    
+                            <span class="information">{{ $fish->information }}</span>                    
                         </div>
 
                     </li> 
@@ -47,7 +46,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalLabel">
-                    <p>Підтвердіть видалення ссавця</p>
+                    <p>Підтвердіть видалення риби</p>
                 </h5>   
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"></span>
@@ -55,7 +54,7 @@
             </div>
 
             <div class="modal-body text-left">
-                Видалити ссавця {{ $mammal->id }}
+                Видалити ссавця {{ $fish->id }}
             </div>
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal">
@@ -75,16 +74,16 @@
 <script>
     $(document).ready(function(){
         $("#delete-animal").click(function(){
-            var id = {!! $mammal->id !!} ;
+            var id = {!! $fish->id !!} ;
             $.ajax({
-                url: '/mammals/mammals'+id,
+                url: '/animals/fishes'+id,
                 type: 'post',
                 data: {
                     _method: 'delete',
                     _token: "{!! csrf_token() !!}"
                 },
                 success: function(msg){
-                    location.href="/mammals/mammals";
+                    location.href="/animals/fishes";
                 }
             });
         });

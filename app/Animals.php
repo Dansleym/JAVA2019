@@ -13,4 +13,7 @@ class Animals extends Model
     public function mammal(){
         return $this->hasOne(Mammal::class);
     }
+    public function fish(){
+        return $this->hasOne(Fish::class);
+    }
 }

@@ -41,5 +41,9 @@ class PagesControler extends Controller
     public function addAnimals(){
         return view('addAnimals');
     }
+
+    public function fishes(){
+        return view('animals/fishes');
+    }
 }
 

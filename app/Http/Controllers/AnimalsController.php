@@ -15,7 +15,7 @@ class AnimalsController extends Controller
     public function index(){
         $animals = \App\Animals::all()->sortBy("id");
 
-        return view( 'mammals/showform', [
+        return view( 'mammals/addform', [
             'animals' => $animals,
             ]);
     }
@@ -44,9 +44,19 @@ class AnimalsController extends Controller
         $animals->animals_class = $request->input('animals_class');
 
         $animals->save();
-        return redirect('animals')->with('animals', $animals); 
+        return redirect('mammals/addform')->with('animals', $animals); 
     }
 
+    public function storechilds(Request $request)
+    {    
+        //return \request()->all();
+        if($request->input('option') == 3){
+            return redirect('/addimagem', "MammalsController@store");
+        }
+        else{
+            return redirect('/addimagef', "FishController@store"); 
+        }
+    }
     /**
      * Display the specified resource.
      *

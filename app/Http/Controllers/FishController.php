@@ -2,38 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Mammal;
+use App\Fish;
 use Illuminate\Http\Request;
 
-class MammalsController extends Controller
+class FishController extends Controller
 {
-    public function index(){
-        $mammals = \App\Mammal::all()->sortBy("genus");
 
-        return view( 'mammals/mammals', [
-            'mammals' => $mammals,
+    public function index()
+    {
+        $fishes = \App\Fish::all()->sortBy("genus");
+
+        return view( 'animals/fishes', [
+            'fishes' => $fishes,
             ]);
     }
 
     public function store(Request $request){
 
-        $mammals = new Mammal();
+        $fishes = new Fish();
 
-        $mammals->animals_id = "5";
-        $mammals->genus = $request->input('genus');
-        $mammals->information = $request->input('information');
+        $fishes->animals_id = "3";
+        $fishes->genus = $request->input('genus');
+        $fishes->information = $request->input('information');
 
         if($request->hasfile('image')){
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('img/mammals/', $filename);
-            $mammals->image = $filename;
+            $file->move('img/fishes/', $filename);
+            $fishes->image = $filename;
         } else{
             return $request;
-            $mammals->image='';
+            $fishes->image='';
         }
-        $mammals->save(
+        $fishes->save(
             \request()->validate([
                 //'image' => 'required',
                 'genus' => ['required', 'max:20'],
@@ -47,12 +49,12 @@ class MammalsController extends Controller
                 'information.max' => 'Інформація про тварину має мистити мінімум 10 та максимум 100 символів',
             ])
         );
-        return redirect('mammals/mammals')->with('mammals', $mammals);   
+        return redirect('animals/fishes')->with('fishes', $fishes);   
 
     }
 
     public function edit($id){
-        $polymorph = Mammal::find($id);
+        $polymorph = Fish::find($id);
         if(is_null($polymorph)){
             return "тварини не існує";
         }
@@ -61,23 +63,23 @@ class MammalsController extends Controller
 
     public function update(Request $request, $id) {
 
-        $mammals = Mammal::find($id);
-        if(is_null($mammals)){
+        $fishes = Fish::find($id);
+        if(is_null($fishes)){
             return "тварини не існує";
         }
 
-        $mammals->genus = $request->input('genus');
-        $mammals->information = $request->input('information');
+        $fishes->genus = $request->input('genus');
+        $fishes->information = $request->input('information');
 
         if($request->hasfile('image')){
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move('img/mammals/', $filename);
-            $mammals->image = $filename;
+            $file->move('img/fishes/', $filename);
+            $fishes->image = $filename;
         }
 
-        $mammals->update(
+        $fishes->update(
             \request()->validate([
                 //'image' => 'required',
                 'genus' => ['required', 'max:20'],
@@ -91,26 +93,26 @@ class MammalsController extends Controller
                 'information.max' => 'Інформація про тварину має мистити мінімум 10 та максимум 100 символів',
             ])
         );
-        return redirect('mammals/mammals')->with('mammals', $mammals);
+        return redirect('animals/fishes')->with('fishes', $fishes);
     }
 
     public function delete($id){
-        $mammals = Mammal::find($id);
-                if(is_null($mammals)){
+        $fishes = Fish::find($id);
+                if(is_null($fishes)){
             return "тварини не існує";
         }
-        $mammals->delete();
+        $fishes->delete();
 
-        return redirect('mammals/mammals')->with('mammals', $mammals);
+        return redirect('animals/fishes')->with('fishes', $fishes);
     }
 
     public function show($id){
-        $mammals = Mammal::find($id);
-                if(is_null($mammals)){
+        $fishes = Fish::find($id);
+                if(is_null($fishes)){
             return "тварини не існує";
         }
 
-        return view('mammals/showform')->with('mammals', $mammals);
+        return view('fishes/showform')->with('fishes', $fishes);
     }
 
 }

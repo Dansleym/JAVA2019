@@ -11,22 +11,41 @@
                 
         <form action="{{ route('addimage') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <h3>Додавання ссавців</h3> 
+            <h3>Додавання тварини</h3> 
             <div class="form-row">
-                <label class="form-label" for="">Choose image: </label>
-                <input required type="file" name="image">
+                <label class="form-label grid-item1" for="">Choose image: </label>
+                <input class="grid-item2" required type="file" name="image">
             </div>
+
+            <div class="form-row" style="margin-bottom: 20px; margin-top: 20px;">
+                <label class="form-label grid-item1" for="">Animal class:</label>
+                <select class="form-input grid-item2" name="option" id="">
+                    <option selected disabled value="0">Виберіть класс тварини</option>
+                        @foreach($animals as $animal)
+                            <option value="{{ $animal->id }}">{{ $animal->animals_class }}</option>
+                        @endforeach
+                </select> 
+            </div>
+ 
             <div class="form-row">
-                <label class="form-label" for="">Genus:</label>
-                <input required maxlength="20" class="form-input" type="text" name="genus">
+                @include("includes/input",[
+                    'fieldId' => 'genus',
+                    'labelText' => 'Genus',
+                    'value' => '',
+                ])
             </div> 
+
             <div class="form-row">
-                <label class="form-label" for="">Information:</label>
-                <input required class="form-input" type="text" name="information">
+                @include("includes/input",[
+                    'fieldId' => 'information',
+                    'labelText' => 'Information',
+                    'value' => '',
+                ])
             </div>
+
             <div class="form-row">
                 <button class="form-button" type="submit" name="submit">Save Data</button>   
-                <a href="/mammals/mammals"><button class="form-button form-button-back" type="button" name="button">Back</button></a>
+                <a href="animals"><button class="form-button form-button-back" type="button" name="button">Back</button></a>
             </div>           
         </form>
         

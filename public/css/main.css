@@ -22,8 +22,8 @@ h2{
 
 .error{
     color: red;
-    margin-left: 125px;
     margin-top: -10px;
+    margin-left: 20px;
     list-style: disc;
 }
 
@@ -182,22 +182,40 @@ li{
 
 /*addform style*/
 .form-row{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+    grid-template-areas: "grid-item1 grid-item2 grid-item2"
+                         ". grid-item3 grid-item3";
     width: 500px;
     align-items: center;
     margin-top: 10px;
     position: relative;
 }
 
+.grid-item1{
+    grid-area: grid-item1;
+}
+
+.grid-item2{
+    grid-area: grid-item2;
+}
+
+.grid-item3{
+    grid-area: grid-item3;
+}
+
+
+.grid-item3 > ul{
+    padding: 0;
+}
+
 .form-label{
-    width: 30%; 
     font-size: 20px;
     color: black;
     font-weight: 600;
 }
 
 .form-input{
-    width: 69%;
     height: 30px;
     border: 1px solid springgreen;
     border-radius: 5px;
@@ -269,4 +287,11 @@ li{
 }
 .form-button-reg-blue{
     background-color: blue;
+}
+
+.modal-content{
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 100px;
 }
